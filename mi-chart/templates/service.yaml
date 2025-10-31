@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: mi-servicio-third-{{ .Values.metadata.labels.app }}
+  name: mi-servicio-{{ .Values.name }}
   namespace: {{ .Values.namespace }}  # Asegúrate de que coincida con tu Deployment
 spec:
   selector:

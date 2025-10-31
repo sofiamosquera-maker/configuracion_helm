@@ -1,13 +1,13 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: mi-hpa-third-{{ .Values.metadata.labels.app }}
+  name: mi-hpa-{{ .Values.name }}
   namespace: {{ .Values.namespace }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: deployment
-    name: mi-deployment-third-{{ .Values.metadata.labels.app }}
+    name: mi-deployment-{{ .Values.name }}
   minReplicas: {{ .Values.hpa.minReplicas }}
   maxReplicas: {{ .Values.hpa.maxReplicas }}
   metrics:

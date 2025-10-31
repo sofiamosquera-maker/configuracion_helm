@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mi-deployment-third-{{ .Values.metadata.labels.app }}
+  name: mi-deployment-{{ .Values.name }}
   namespace: {{ .Values.namespace }}
   labels:
-    app: {{ .Values.metadata.labels.app }}
+    app: {{ .Values.name }}
     areanegocio: tecnologia
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: {{ .Values.metadata.labels.app }}
+      app: {{ .Values.name }}
   template:
     metadata:
       labels:
-        app: {{ .Values.metadata.labels.app }}
+        app: {{ .Values.name }}
     spec:
       containers:
         - name: contenedor-principal
