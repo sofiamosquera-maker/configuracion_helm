@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mi-deployment-third-{{ .Values.metadata.labels.app }}
-  namespace: sofia-mosquera-dev
+  namespace: {{ .Values.namespace }}
   labels:
     app: {{ .Values.metadata.labels.app }}
     areanegocio: tecnologia

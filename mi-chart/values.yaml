@@ -1,3 +1,9 @@
+namespace: sofia-mosquera-dev
+name: mi-app-third
+
+replicaCount: 1
+
+
 metadata:
   labels:
     app: mi-app-third
@@ -16,3 +22,11 @@ container:
 hpa:
   minReplicas: 1
   maxReplicas: 5
+
+configmap:
+  database: "192.168.1.1"
+
+secret:
+  # plain text password; template will base64-encode when placing into `data:`
+  password: "hola"
+
